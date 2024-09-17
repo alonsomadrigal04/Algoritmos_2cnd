@@ -18,11 +18,18 @@ int BusquedaLenta(int n, vector<int> listaNumeros)
 // Busqueda Binaria iterativa
 int BusquedaBinariaLenta(int n, vector<int> listaNumeros)
 {
-    int mitad = listaNumeros.size() / 2;
+    int final = listaNumeros.size();
+    int inicio = 0;
+    int mitad = (final + inicio) / 2;
     while(n != listaNumeros[mitad])
     {
-        int mitad = listaNumeros.size() / 2;
-        if(mitad >)
+        int mitad = (final + inicio) / 2;
+        if(listaNumeros[mitad] > n) final = mitad - 1;
+        else if(listaNumeros[mitad] < n) inicio = mitad + 1;
+        else return mitad;
     }
-    
+    return -1;
 }
+
+
+
